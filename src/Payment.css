@@ -1,0 +1,133 @@
+
+.main{
+    width: 600px;
+    height: 600px;
+    margin-left: 30%;
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 20px;
+    margin-top: 5px;
+    box-shadow: 5px 5px rgb(111, 128, 0);
+}
+.icon{
+    margin: 5px;
+    padding: 5px;
+}
+.Upi-section{
+    display: flex;
+}
+.phonepay-section{
+    margin-top: 45px;
+    border: 2px solid blue;
+}
+
+.p-img{
+    height: 100px;
+    width: 200px;
+}
+.phonepay{
+    margin-top: 20px;
+    display: flex;
+    margin-left: 50px;
+}
+.paytm{
+    margin-left: 10px;
+    height: 80px;
+    width: 150px;
+}
+.paytm-radio{
+  margin-top: 40px;
+  margin-left: 100px;
+}
+.paytm-section{
+    margin-top: 20px;
+    display: flex;
+    margin-left: 30px;
+}
+.card{
+    font-size: 20px;
+    margin-left: 5px;
+    color: rgb(255, 200, 0);
+    font-weight: 700;
+}
+.cash-ond{
+    font-size: 20px;
+    margin-left: 5px;
+    color: rgb(72, 0, 255);
+    font-weight: 20px;
+    font-weight: 700;
+}
+.card-cash{
+    display: flex;
+    margin-left: 50px;
+}
+.cash-on{
+    margin-left: 160px;
+}
+.card-section{
+    margin-top: 30px;
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-evenly;
+}
+.card-number{
+    margin-left: 150px;
+    margin-top: 30px;
+}
+.cvv-number{
+    margin-left: 150px;
+    margin-top: 20px;
+}
+.expiry-date{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.upi-id{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.btn-pay{
+    margin-left: 100px;
+    margin-top: 30px;
+    background-color: rgb(38, 255, 0);
+    color: rgb(240, 255, 252);
+    border: none;
+    border-radius: 5px;
+}
+.btn-paycard{
+    margin-left: 230px;
+    margin-top: 30px;
+    background-color: rgb(38, 255, 0);
+    color: rgb(240, 255, 252);
+    border: none;
+    border-radius: 5px;
+}
+.btn-cashOnDeivary{
+    margin-left: 230px;
+    margin-top: 30px;
+    background-color: rgb(38, 255, 0);
+    color: rgb(240, 255, 252);
+    border: none;
+    border-radius: 5px;
+}
+.pay{
+    margin-left: 150px;
+    color: rgb(221, 0, 255);
+}
+.btn-pay:hover{
+    background-color: blueviolet;
+    color: black;
+}
+.tpay{
+    color: black;
+}
+.payPh{
+    color: rgb(137, 43, 226);
+    font-weight: 500;
+    margin-top: 10px;
+}
+.payp{
+    color: rgb(223, 43, 226);
+    font-weight: 500;
+    margin-top: 10px;
+}
