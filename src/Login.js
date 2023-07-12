@@ -34,20 +34,8 @@ function Login() {
        }).catch(err => console.log(err));
     }
     },[data])
-    
-    // const saveUser = (user) => {
-    //     const userData = JSON.parse(localStorage.getItem('userData'));
-    //     //console.log('userData', userData.length);
-    //     if(userData){
-    //         userData.push(user)
-    //         localStorage.setItem('userData', JSON.stringify(userData))
-    //     }else{
-    //         let userList = []
-    //         userList.push(user)
-    //         localStorage.setItem('userData', JSON.stringify(userList))
-    //     }
-    // }
-    const register = (e) => {
+   
+  const register = (e) => {
         e.preventDefault();
         let  email=emailRef.current.value;
         let password=passwordRef.current.value;
@@ -82,6 +70,7 @@ function Login() {
                 })
         console.log(userData)
             if(userData){
+              console.log(userData[0].Password)
               if(userData[0].Password === userInfo.Password){
                   console.log('test');
                   dispatch({
