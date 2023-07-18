@@ -12,8 +12,8 @@ function Login() {
     const [data,setdata]=useState();
     const [userlist,setuserList]=useState()
     var rest_api=process.env.REACT_APP_API;
-
-    //var user=0;
+    console.log(rest_api)
+    
     const emailRef =  useRef();
     const passwordRef =  useRef();
     const navigate=useNavigate();
@@ -21,56 +21,59 @@ function Login() {
     useEffect(()=>{
           axios.get(`${rest_api}`)
           .then(res=>{
-            console.log(res.data)
            setuserList(res.data)
           }).catch(err => console.log(err));
        },[])
 
-    useEffect(()=>{
-     if(data){
-       axios.post(`${rest_api}`,data)
-       .then(res=>{
-        alert('success')
-       }).catch(err => console.log(err));
-    }
-    },[data])
-   
-  const register = (e) => {
-        e.preventDefault();
-        let  email=emailRef.current.value;
-        let password=passwordRef.current.value;
-        var userInfo = {}
-        
-        if(email&&password){
-          userInfo.Email = email;
-          userInfo.Password = password;
-        }else{
+       useEffect(()=>{
+        if(data){
+          console.log("ok")
+           axios.post(`${rest_api}`,data)
+              .then(res =>{
+                 alert('success')
+                 navigate('/')
+              }).catch(err => console.log(err));
+          }
+      
+       },[data])
+    
+    const register = (e) => {
+      e.preventDefault();
+      var data1={};
+      if(emailRef.current.value&&passwordRef.current.value){
+      data1.Email=emailRef.current.value;
+      data1.Password=passwordRef.current.value;
+      }else{
             alert("please enter Email and Password")
-        }
+      }
         
-        const userEmail =  userlist.find((user) => {
-              return user.Email === email
+      const userEmail =  userlist.find((user) => {
+              return user.Email === emailRef.current.value;
               })
-        console.log(userEmail)
-        if(userEmail){
+      if(userEmail){
             alert('Please "sign in" you already user');
-        }else{
-            setdata(userInfo)
+      }else{
+            setdata(data1)
             dispatch({
             type: "SET_USER",
-            user: email
+            user: emailRef.current.value
             });
-            navigate('/')
+            reset();
             }
         }
+        const reset=()=>{
+          emailRef.current.value='';
+          passwordRef.current.value='';
+         }
+    
 
     const validateUser = (userInfo) => {
         const userData =  userlist.filter((user) => {
             return user.Email === userInfo.Email
                 })
-        console.log(userData)
-            if(userData){
-              console.log(userData[0].Password)
+       //console.log(userData)
+            if(userData.length>=1){
+             // console.log(userData[0].Password)
               if(userData[0].Password === userInfo.Password){
                   console.log('test');
                   dispatch({
